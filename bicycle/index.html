@@ -1,0 +1,331 @@
+<!DOCTYPE html>      
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>BICYCLE RENT</title>
+    <!-- Add the Google Maps API script -->
+    <script src="AIzaSyCkUuEmmwFma4USoBbZ54SkQwlprlUG8Es" async defer></script>
+    <style>
+        .map-container {
+            width: 100%;
+            height: 500px;
+            margin: 50px 0;
+        }
+        #map {
+            height: 100%;
+            width: 100%;
+        }
+        .location-selector {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .location-selector select {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 300px;
+            max-width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="nav">
+        <div class="navTop">
+            <div class="navItem">
+                <img src="./img/Contact/sneakers.png" alt="">
+            </div>
+            <div class="navItem">
+                <div class="search">
+                    <input type="text" placeholder="Search..." class="searchInput">
+                    <img src="./img2/search-icon-removebg-preview.png" width="20" height="20" alt="" class="searchIcon">
+                </div>
+            </div>
+            <div class="navItem">
+                <span class="limitedOffer" onclick="location.href='admin.php';" style="cursor: pointer;">Admin</span>
+            </div>
+        </div>
+        <div class="navBottom">
+            <h3 class="menuItem">SMALL BICYCLE</h3>
+            <h3 class="menuItem">TWO PEOPLE BICYCLE</h3>
+            <h3 class="menuItem">BABY BICYCLE</h3>
+            <h3 class="menuItem">FAMILY BICYCLE</h3>
+            
+        </div>
+    </nav>
+    <div class="slider">
+        <div class="sliderWrapper">
+            <div class="sliderItem">
+                <img src="./img2/pink.kid-removebg-preview.png" alt="" class="sliderImg">
+                <div class="sliderBg"></div>
+                <h1 class="sliderTitle">SMALL </br>BICYCLE</br> </h1>
+                <h2 class="sliderPrice">RM8</h2>
+                <a href="#product1">
+                    <button class="buyButton">RENT NOW!</button>
+                </a>
+            </div>
+            <div class="sliderItem">
+                <img src="./img2/black-removebg-preview.png" alt="" class="sliderImg">
+                <div class="sliderBg"></div>
+                <h1 class="sliderTitle">TWO </br> PEOPLE </br>BICYCLE </h1>
+                <h2 class="sliderPrice">RM10<h2>
+                <a href="#product1">
+                    <button class="buyButton">RENT NOW!</button>
+                </a>
+            </div>
+            <div class="sliderItem">
+                <img src="./img2/red-removebg-preview.png" alt="" class="sliderImg">
+                <div class="sliderBg"></div>
+                <h1 class="sliderTitle">BABY</br>BICYCLE </br> </h1>
+                <h2 class="sliderPrice">RM5</h2>
+                <a href="#product1">
+                    <button class="buyButton">RENT NOW!</button>
+                </a>
+            </div>
+            <div class="sliderItem">
+                <img src="./img2/yellow-removebg-preview.png" alt="" class="sliderImg">
+                <div class="sliderBg"></div>
+                <h1 class="sliderTitle">FAMILY</br>BICYCLE </br> </h1>
+                <h2 class="sliderPrice">RM15</h2>
+                <a href="#product1">
+                    <button class="buyButton">RENT NOW!</button>
+                </a>
+            </div>
+            <div class="sliderItem">
+                
+                <div class="sliderBg"></div>
+                <h1 class="sliderTitle">MAP</br> </br> </h1>
+                <h2 class="sliderPrice"></h2>
+                <a href="#product1">
+                   
+                </a>
+            </div>
+        </div>
+    </div>
+   
+    <div class="features">
+        <div class="feature">
+            <img src="./img2/Member.jpg" alt="" class="featureIcon">
+            <span class="featureTitle">MEMBER</span>
+            <span class="featureDesc">Get more discounts.</span>
+        </div>
+        <div class="feature">
+            <img class="featureIcon" src="./img2/Gift.webp" alt="">
+            <span class="featureTitle">GIFT CARDS</span>
+            <span class="featureDesc">Buy gift cards and use coupon codes easily.</span>
+        </div>
+        <div class="feature">
+            <img class="featureIcon" src="./img2/contact.webp" alt="">
+            <span class="featureTitle">CONTACT US!</span>
+            <span class="featureDesc">Keep in touch via email and support system.</span>
+        </div>
+    </div>
+    
+    <div class="product" id="product1">
+        <img src="./img2/pink.kid-removebg-preview.png" alt="" class="productImg">
+        <div class="productDetails">
+            <h1 class="productTitle">SMALL BICYCLE</h1>
+            <h2 class="productPrice">RM8</h2>
+            <p class="productDesc"></p>
+            <div class="colors">
+                <div class="color"></div>
+            </div>
+            <button class="productButton">RENT NOW!</button>
+        </div>
+        
+    </div>
+     
+    <div class="payment">
+        <h1 class="payTitle">Personal Information</h1>
+        <form action="data.php" method="POST">
+            <label>Name and Surname</label>
+            <input type="text" name="name" placeholder="John Doe" class="payInput">
+            <br>
+            <label>Phone Number</label>
+            <input type="text" name="phone" placeholder="+6012 345 6781" class="payInput" maxlength="13">
+            <br>
+            <label>Rental Date</label>
+            <input type="date" name="rentaldate" placeholder="22/5/25" class="payInput">
+            <br>
+            <label>Return Date</label>
+            <input type="date" name="rentaldate" placeholder="22/5/25" class="payInput">
+            <br>
+            <h1 class="payTitle">Card Information</h1>
+            <div class="cardIcons">
+                <img src="./img/Contact/visa.png" width="40" alt="" class="cardIcon">
+                <img src="./img/Contact/master.png" alt="" width="40" class="cardIcon">
+            </div>
+            <input type="text" name="card_number" class="payInput" placeholder="Card Number" maxlength="16">
+            <div class="cardInfo">
+                <input type="text" name ="rental_date" placeholder="mm" class="payInput sm" maxlength="2">
+                <input type="text" name ="expiry_year" placeholder="yyyy" class="payInput sm" maxlength="4">
+                <input type="text" name ="cvv" placeholder="cvv" class="payInput sm">
+            </div>
+            <button type="submit" class="payButton">Checkout!</button>
+            <span class="close">X</span>
+        </form>
+    </div>
+
+    <div class="gallery">
+        <div class="galleryItem">
+            <h1 class="galleryTitle">Be Yourself!</h1>
+            <img src="./img2/bicyycle forest.jpg" alt="" class="galleryImg">
+        </div>
+        <div class="galleryItem">
+            <img src="./img2/water1.jpg" alt="" class="galleryImg">
+            <h1 class="galleryTitle">This is the First Day of Your New Life</h1>
+        </div>
+        <div class="galleryItem">
+            <h1 class="galleryTitle">Just Do it!</h1>
+            <img src="./img2/bike mountain.jpg" alt="" class="galleryImg">
+        </div>
+    </div>
+    
+    <div class="newSeason">
+        <div class="nsItem">
+            <img src="./img2/Mountain Bike.jpg" alt="" class="nsImg">
+        </div>
+        <div class="nsItem">
+            <h3 class="nsTitleSm">HOLIDAY COMING SOON</h3>
+            <h1 class="nsTitle">NEW BICYCLE</h1>
+            <h1 class="nsTitle">CHOOSE YOUR BICYCLE</h1>
+            <a href="#nav">
+                <button class="nsButton">CHOOSE YOUR BICYCLE</button>
+            </a>
+        </div>
+        <div class="nsItem">
+            <img src="./img2/wallpaper3.jpeg" alt="" class="nsImg">
+        </div>
+    </div>
+
+    
+    <footer>
+        <div class="footerLeft">
+            <div class="footerMenu">
+                <h1 class="fMenuTitle">About Us</h1>
+                <ul class="fList">
+                    <li class="fListItem">Company</li>
+                    <li class="fListItem">Contact</li>
+                    <li class="fListItem">Careers</li>
+                    <li class="fListItem">Affiliates</li>
+                    <li class="fListItem">Stores</li>
+                </ul>
+            </div>
+            <div class="footerMenu">
+                <h1 class="fMenuTitle">Useful Links</h1>
+                <ul class="fList">
+                    <li class="fListItem">Support</li>
+                    <li class="fListItem">Refund</li>
+                    <li class="fListItem">FAQ</li>
+                    <li class="fListItem">Feedback</li>
+                    <li class="fListItem">Stories</li>
+                </ul>
+            </div>
+            <div class="footerMenu">
+                <h1 class="fMenuTitle">Products</h1>
+                <ul class="fList">
+                    <li class="fListItem">SMALL BICYCLE</li>
+                    <li class="fListItem">TWO PEOPLE BICYCLE</li>
+                    <li class="fListItem">BABY BICYCLE</li>
+                    <li class="fListItem">FAMILY BICYCLE</li>
+                    <li class="fListItem">MAP</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footerRight">
+            <div class="footerRightMenu">
+                <h1 class="fMenuTitle">Subscribe to our channel</h1>
+                <div class="fMail">
+                    <input type="text" placeholder="your@email.com" class="fInput">
+                    <button class="fButton">Join!</button>
+                </div>
+            </div>
+            <div class="footerRightMenu">
+                <h1 class="fMenuTitle">Follow Us</h1>
+                <div class="fIcons">
+                    <img src="./img2/fb.jpg" alt="" class="fIcon">
+                    <img src="./img2/ig.webp" alt="" class="fIcon">
+                    <img src="./img2/tiktok.jpg" alt="" class="fIcon">
+                </div>
+            </div>
+            <div class="footerRightMenu">
+                <span class="copyright">@ThreeSea. All rights reserved. 2023.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize and display the map
+        let map;
+        let marker;
+        
+        function initMap() { 
+            // Default location (Kuala Lumpur)
+            const defaultLocation = { lat: 5.354075655561101, lng: 100.20066494262544 };
+            
+            // Create the map
+            map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 15,
+                center: defaultLocation,
+                mapTypeId: 'roadmap'
+            });
+            
+            // Add a marker
+            marker = new google.maps.Marker({
+                position: defaultLocation,
+                map: map,
+                title: "Bicycle Rental Location"
+            });
+            
+            // Add info window
+            const infoWindow = new google.maps.InfoWindow({
+                content: "<h3>Bicycle Rental</h3><p>Our main rental location in Kuala Lumpur</p>"
+            });
+            
+            marker.addListener("click", () => {
+                infoWindow.open(map, marker);
+            });
+        }
+        
+        // Function to change the map location
+        function changeLocation() {
+            const select = document.getElementById("locationSelect");
+            const coords = select.value.split(",");
+            const lat = parseFloat(coords[0]);
+            const lng = parseFloat(coords[1]);
+            
+            const newLocation = new google.maps.LatLng(lat, lng);
+            
+            // Update map center
+            map.setCenter(newLocation);
+            
+            // Update marker position
+            marker.setPosition(newLocation);
+            
+            // Update info window content based on location
+            let locationName = select.options[select.selectedIndex].text;
+            const infoWindow = new google.maps.InfoWindow({
+                content: `<h3>Bicycle Rental</h3><p>Our rental location in ${locationName}</p>`
+            });
+            
+            // Close any existing info window and open new one
+            google.maps.event.clearListeners(marker, 'click');
+            marker.addListener("click", () => {
+                infoWindow.open(map, marker);
+            });
+            
+            // Zoom in a bit when changing location
+            map.setZoom(15);
+        }
+    </script>
+    <script src="./app.js"></script>
+</body>
+</html>

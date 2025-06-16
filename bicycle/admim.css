@@ -1,0 +1,29 @@
+a{
+    position: fixed;
+    top: 20px;
+    right: 200px;
+
+}
+body{
+    background-color: rgb(244, 184, 135);
+}
+table{
+    width: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+    background-color: rgba(223, 230, 23, 0.744);
+}
+th {
+    border: 1px solid #e0d02192;
+    padding: 12px;
+    background-color: #60e01191;
+    color: rgba(3, 5, 11, 0.731);
+}
+td {
+    border: 0.5px solid #b2e01bef;
+}
+h2 {
+    font-size: 28px;
+    color: #333;
+    text-align: center;
+}
